@@ -12,37 +12,35 @@
 </head>
 <body>
 
-    <header class="header scroll-header">
-        <nav class="nav container">
-            <a href="index.html" class="nav__logo">Quotastic</a>
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list">
-                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
-                </ul>
-                <div class="nav__close" id="nav-close"><i class="fas fa-times"></i></div>
-            </div>
-            <div class="nav__toggle" id="nav-toggle"><i class="fas fa-bars"></i></div>
-        </nav>
-    </header>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <div class="sidebar__logo">Quotastic</div>
+            <ul class="sidebar__nav">
+                <li><a href="index.html" class="sidebar__link"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="dashboard.html" class="sidebar__link"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="create.html" class="sidebar__link"><i class="fas fa-plus-square"></i> Create</a></li>
+            </ul>
+        </aside>
 
-    <main class="main">
-        <section class="form-section">
-            <div class="form-container container">
-                <h1 class="form-title">Edit Quote</h1>
-                <form class="quote-form">
-                    <div class="form-group">
-                        <label for="quoteText">Quote Text</label>
-                        <textarea id="quoteText" name="quoteText" rows="6">"The greatest glory in living lies not in never falling, but in rising every time we fall."</textarea>
-                    </div>
-                    <div class="form-group">
-                         <label for="quoteAuthor">Author</label>
-                         <input type="text" id="quoteAuthor" name="quoteAuthor" value="Nelson Mandela">
-                    </div>
-                    <button type="submit" class="button">Save Changes</button>
-                </form>
-            </div>
-        </section>
-    </main>
+        <main class="dashboard__main">
+            <section class="form-section">
+                <div class="form-container">
+                    <h1 class="form-title">Edit Quote</h1>
+                    <form class="quote-form">
+                        <div class="form-group">
+                            <label for="quoteText">Quote Text</label>
+                            <textarea id="quoteText" name="quoteText" rows="6">"The greatest glory in living lies not in never falling, but in rising every time we fall."</textarea>
+                        </div>
+                        <div class="form-group">
+                             <label for="quoteAuthor">Author</label>
+                             <input type="text" id="quoteAuthor" name="quoteAuthor" value="Nelson Mandela">
+                        </div>
+                        <button type="submit" class="button">Save Changes</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="js/main.js"></script>

@@ -42,16 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
         gsap.from('.quote__text', {opacity: 0, y: 20, delay: 1.5, duration: 0.8});
         gsap.from('.quote__author', {opacity: 0, y: 20, delay: 1.7, duration: 0.8});
         gsap.from('.button', {opacity: 0, scale: 0.8, delay: 2, duration: 0.8, ease: 'back.out(1.7)'});
-
-        const button = document.querySelector('.button');
-        if (button) {
-            button.addEventListener('mouseenter', () => {
-                gsap.to(button, { scale: 1.1, boxShadow: '0 10px 20px hsla(228, 81%, 49%, 0.6)', duration: 0.3 });
-            });
-            button.addEventListener('mouseleave', () => {
-                gsap.to(button, { scale: 1, boxShadow: '0 10px 20px hsla(228, 81%, 49%, 0.4)', duration: 0.3 });
-            });
-        }
     }
 
     // Dashboard Logic
