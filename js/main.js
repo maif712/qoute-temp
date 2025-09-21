@@ -42,6 +42,68 @@ document.addEventListener('DOMContentLoaded', () => {
         gsap.from('.quote__text', {opacity: 0, y: 20, delay: 1.5, duration: 0.8});
         gsap.from('.quote__author', {opacity: 0, y: 20, delay: 1.7, duration: 0.8});
         gsap.from('.button', {opacity: 0, scale: 0.8, delay: 2, duration: 0.8, ease: 'back.out(1.7)'});
+
+        // Magnetic Button Effect
+        const button = document.querySelector('.button');
+        if (button) {
+            button.addEventListener('mousemove', (e) => {
+                const { offsetX, offsetY, target } = e;
+                const { clientWidth, clientHeight } = target;
+
+                const x = (offsetX / clientWidth) - 0.5;
+                const y = (offsetY / clientHeight) - 0.5;
+
+                gsap.to(button, {
+                    x: x * 30,
+                    y: y * 30,
+                    scale: 1.1,
+                    ease: 'power2.out',
+                    duration: 0.4
+                });
+            });
+
+            button.addEventListener('mouseleave', () => {
+                gsap.to(button, {
+                    x: 0,
+                    y: 0,
+                    scale: 1,
+                    ease: 'elastic.out(1, 0.3)',
+                    duration: 0.7
+                });
+            });
+        }
+
+        // 3D Tilt Card Effect
+        const quoteCard = document.querySelector('.quote__card');
+        if (quoteCard) {
+            quoteCard.addEventListener('mousemove', (e) => {
+                const { clientX, clientY, target } = e;
+                const { left, top, width, height } = target.getBoundingClientRect();
+
+                const x = (clientX - left) / width;
+                const y = (clientY - top) / height;
+
+                const rotateX = (y - 0.5) * -20; // -10 to 10 degrees
+                const rotateY = (x - 0.5) * 20; // -10 to 10 degrees
+
+                gsap.to(quoteCard, {
+                    rotationX: rotateX,
+                    rotationY: rotateY,
+                    transformPerspective: 1000,
+                    ease: 'power1.out',
+                    duration: 0.5
+                });
+            });
+
+            quoteCard.addEventListener('mouseleave', () => {
+                gsap.to(quoteCard, {
+                    rotationX: 0,
+                    rotationY: 0,
+                    ease: 'elastic.out(1, 0.3)',
+                    duration: 1
+                });
+            });
+        }
     }
 
     // Dashboard Logic
