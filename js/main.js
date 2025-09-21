@@ -1,16 +1,3 @@
-/*=============== LOADER ===============*/
-window.onload = function() {
-    const loader = document.querySelector('.loader');
-    gsap.to(loader, {
-        autoAlpha: 0,
-        duration: 1,
-        delay: 0.5,
-        onComplete: () => {
-            loader.style.display = 'none';
-        }
-    });
-};
-
 /*=============== SHARED ===============*/
 // Mobile Menu
 const navMenu = document.getElementById('nav-menu'),
